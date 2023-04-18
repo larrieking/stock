@@ -4,7 +4,6 @@ package com.acl.stock.repository;
 import com.acl.stock.domain.request.PaginationRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.tuple.Pair;
-import org.javers.spring.annotation.JaversAuditable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -33,7 +32,6 @@ public class BaseRepository extends CustomRepository {
         super(em);
     }
 
-    @JaversAuditable
     public <T> T save(T entity) {
 
         em.persist(entity);
@@ -43,7 +41,6 @@ public class BaseRepository extends CustomRepository {
     }
 
 
-    @JaversAuditable
     public <T> void update(T entity) {
 
         em.merge(entity);

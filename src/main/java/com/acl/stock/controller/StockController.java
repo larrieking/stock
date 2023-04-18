@@ -42,7 +42,7 @@ private final StockService service;
 
     @PostMapping(path = "/stocks")
     @ApiOperation(value = "Create a stock", notes = "This endpoint Create a stock")
-    public ResponseEntity<AppResponse<StockResponse>> createStock(@Valid CreateStockRequest request) {
+    public ResponseEntity<AppResponse<StockResponse>> createStock(@Valid @RequestBody CreateStockRequest request) {
         StockResponse clientResponse = service.createStock(request);
         AppResponse<StockResponse> response = AppResponse.<StockResponse>builder().message(AppConstants.ApiResponseMessage.SUCCESSFUL)
                 .status(HttpStatus.OK.value()).data(clientResponse).error("").build();

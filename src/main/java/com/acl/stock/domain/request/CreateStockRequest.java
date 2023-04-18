@@ -14,6 +14,6 @@ import java.math.BigDecimal;
 public class CreateStockRequest {
     @NotNull(message = "name is required")
     private String name;
-    @NotNull(message = "price is requred")
+    @NotNull(message = "current price is required")
     private BigDecimal currentPrice;
 }
