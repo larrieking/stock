@@ -30,7 +30,7 @@ import javax.ws.rs.Produces;
 public class StockController {
 
 private final StockService service;
-
+    @CrossOrigin
     @GetMapping(path = "/stocks")
     @ApiOperation(value = "Fetch all stocks", notes = "This endpoint fetches all stock")
     public ResponseEntity<AppResponse<PagedResponse<StockResponse>>> queryStocks(@Valid StockFilterRequest request) {
