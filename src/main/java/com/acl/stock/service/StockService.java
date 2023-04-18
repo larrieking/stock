@@ -4,6 +4,7 @@ import com.acl.stock.Exceptions.BadRequestException;
 import com.acl.stock.domain.request.CreateStockRequest;
 import com.acl.stock.domain.request.PaginationRequest;
 import com.acl.stock.domain.request.StockFilterRequest;
+import com.acl.stock.domain.request.UpdateStockRequest;
 import com.acl.stock.domain.response.PagedResponse;
 import com.acl.stock.domain.response.StockResponse;
 import com.acl.stock.model.Stock;
@@ -45,7 +46,7 @@ public class StockService {
     }
 
 
-    public StockResponse updateStock(CreateStockRequest request, Long id){
+    public StockResponse updateStock(UpdateStockRequest request, Long id){
        Stock stock = repo.findOneByOptional(Stock.class, "id", id).orElseThrow(()->new BadRequestException("Invalid stock id"));
          mapper.map(request, stock);
         repo.update(stock);

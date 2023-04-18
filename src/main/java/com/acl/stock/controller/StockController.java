@@ -2,6 +2,7 @@ package com.acl.stock.controller;
 
 import com.acl.stock.domain.request.CreateStockRequest;
 import com.acl.stock.domain.request.StockFilterRequest;
+import com.acl.stock.domain.request.UpdateStockRequest;
 import com.acl.stock.domain.response.AppResponse;
 import com.acl.stock.domain.response.PagedResponse;
 import com.acl.stock.domain.response.StockResponse;
@@ -52,7 +53,7 @@ private final StockService service;
 
     @PutMapping(path = "/stocks/{id:\\d+}")
     @ApiOperation(value = "Update a stock", notes = "This endpoint update a stock")
-    public ResponseEntity<AppResponse<StockResponse>> updateStock(@Valid @RequestBody CreateStockRequest request,@PathVariable Long id) {
+    public ResponseEntity<AppResponse<StockResponse>> updateStock(@Valid @RequestBody UpdateStockRequest request, @PathVariable Long id) {
         StockResponse clientResponse = service.updateStock(request, id);
         AppResponse<StockResponse> response = AppResponse.<StockResponse>builder().message(AppConstants.ApiResponseMessage.SUCCESSFUL)
                 .status(HttpStatus.OK.value()).data(clientResponse).error("").build();
