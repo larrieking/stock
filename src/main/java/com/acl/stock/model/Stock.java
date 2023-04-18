@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 
 @Data
@@ -30,7 +31,7 @@ public class Stock extends Auditable<String> implements Serializable {
     private String name;
 
     @Column(name = "CURRENT_PRICE", nullable = false)
-    private String currentPrice;
+    private BigDecimal currentPrice;
 
 
 }

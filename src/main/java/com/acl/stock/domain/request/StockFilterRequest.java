@@ -7,10 +7,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -24,5 +20,4 @@ public class StockFilterRequest extends PaginationRequest{
 
     private String name;
 
-    private String currentPrice;
 }

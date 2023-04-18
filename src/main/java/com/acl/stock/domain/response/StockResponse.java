@@ -2,8 +2,8 @@ package com.acl.stock.domain.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -17,7 +17,7 @@ public class StockResponse{
 
     private String name;
 
-    private String currentPrice;
+    private BigDecimal currentPrice;
 
     private Date createdDate;
     private Date lastModifiedDate;
